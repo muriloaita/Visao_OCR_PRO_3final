@@ -1,0 +1,3 @@
+{$OCR_DOMAIN} {
+	reverse_proxy ocr:5001
+}

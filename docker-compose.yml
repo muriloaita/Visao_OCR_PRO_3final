@@ -1,0 +1,29 @@
+services:
+  ocr:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./prompts:/app/prompts:ro
+    ports:
+      - "127.0.0.1:5001:5001" # acessivel apenas de dentro da VPS
+
+  # HTTPS com certificado automatico (Let's Encrypt).
+  # Ative com: docker compose --profile https up -d
+  # Nao use se as portas 80/443 da VPS ja estiverem ocupadas por outro proxy.
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    profiles: ["https"]
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - ocr
+
+volumes:
+  caddy_data:
