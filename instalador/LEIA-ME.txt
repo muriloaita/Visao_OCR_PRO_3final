@@ -1,0 +1,51 @@
+﻿============================================================
+ VISÃO OCR PRO 3 — SOMENTE OCR
+ Marques & Gameiro Advocacia
+============================================================
+
+O QUE É
+Ferramenta interna de OCR para documentos jurídicos em PDF:
+páginas digitais são lidas direto do arquivo; páginas escaneadas
+passam pelo Tesseract (português); páginas mistas do PROJUDI
+(rodapé digital + imagem escaneada) são tratadas automaticamente.
+
+Nesta versão os modos de extrato bancário e de extrato de cartão
+(maquininha) foram retirados.
+
+PACOTE COMPLETO
+Já vem tudo incluído: servidor OCR, site e o Tesseract com o idioma
+português. NÃO é preciso instalar Python, Node.js nem Tesseract.
+
+COMO USAR
+1) Abra "Visão OCR Pro" pelo atalho (Área de Trabalho ou Menu Iniciar).
+   Na versão portátil (ZIP): dê dois cliques em VisaoOCRPro.exe.
+2) O navegador abre em http://localhost:5002
+3) Arraste o PDF, clique em "Iniciar OCR" e baixe o resultado
+   (TXT, Markdown, PDF ou ZIP completo).
+   - "Forçar OCR em Todas as Páginas": passa todas as páginas pelo
+     Tesseract (útil quando o texto digital do PDF vem truncado).
+   - PDFs grandes (mais de 40 páginas) são processados em lotes,
+     com barra de progresso.
+
+PASTA INTEIRA DE PDFs
+Menu Iniciar > "Visão OCR Pro — Processar pasta de PDFs"
+(ou ícone da bandeja > "Processar pasta de PDFs...").
+Gera um arquivo <nome>_texto.txt ao lado de cada PDF e um
+relatorio_lote.txt na pasta.
+
+ÍCONE NA BANDEJA (perto do relógio)
+- Abrir Visão OCR Pro
+- Processar pasta de PDFs...
+- Sair (encerra o servidor)
+
+SEGURANÇA
+Tudo roda nesta máquina. Nenhum documento é enviado para a internet
+e não é preciso chave de API. O servidor atende apenas este
+computador (127.0.0.1), pois processa documentos sigilosos.
+
+PROBLEMAS
+- "OCR Offline" no canto da tela: abra o programa pelo atalho.
+- "A porta 5002 está sendo usada": reinicie o computador.
+- Log do servidor: %LOCALAPPDATA%\VisaoOCRPro\logs\servidor.log
+- Log da instalação: %TEMP%\Setup Log *.txt
+============================================================

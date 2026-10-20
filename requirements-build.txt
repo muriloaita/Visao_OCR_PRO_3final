@@ -1,0 +1,5 @@
+# Dependências extras para gerar o instalador (instalador/build.ps1) e testar.
+# Instale com: pip install -r requirements.txt -r requirements-build.txt
+
+pyinstaller>=6.10
+pytest>=8.0

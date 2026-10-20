@@ -1,0 +1,10 @@
+* text=auto
+# Arquivos lidos por ferramentas do Windows: sempre CRLF
+*.ps1 text eol=crlf
+*.iss text eol=crlf
+*.vbs text eol=crlf
+*.bat text eol=crlf
+instalador/LEIA-ME.txt text eol=crlf
+# Binários
+*.ico binary
+*.png binary

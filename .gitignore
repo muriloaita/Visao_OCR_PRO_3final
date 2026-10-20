@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+saida/
+coverage/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+# Tesseract portátil para desenvolvimento local (o build baixa o seu)
+Tesseract-OCR/
+.DS_Store
+*.log
+.env*
+!.env.example

@@ -1,0 +1,18 @@
+# Visão OCR Pro — Dependências Python (somente OCR)
+# Instale com: pip install -r requirements.txt
+
+flask>=3.0.0
+flask-cors>=4.0.0
+waitress>=3.0.0          # servidor de produção (multiusuário) no Windows
+pytesseract>=0.3.10
+# PyMuPDF 2.x passou a exigir onnxruntime + modelo de layout (centenas de MB,
+# carregado em toda inicialização) — desnecessário para OCR. Fica na linha 1.x.
+pymupdf>=1.24.3,<2
+Pillow>=10.0.0
+
+# Melhora a precisão do pré-processamento OCR (recomendado)
+opencv-python-headless>=4.9
+numpy>=1.26
+
+# Ícone na bandeja do Windows (app_desktop.py)
+pystray>=0.19.5; sys_platform == "win32"
